@@ -16,7 +16,7 @@ prometheus - grafana.
 
 ### Решение ДЗ
 
-  Установка и запуск _Prometheus Grafana_ автоматические, при помощи _Vagrant/Ansible_. После установки и запуска виртуальной машины _Ansible_ скачивает, устанавливает и запускает (в контейнере) _Prometheus Grafana_. Мониторинг системы доступен по адресу: _http://192.168.56.10:3000_. 
+  Установка и запуск _Prometheus Grafana_ автоматические, при помощи _Vagrant/Ansible_. После установки и запуска виртуальной машины _Ansible_ скачивает, устанавливает и запускает (в контейнере) _Prometheus Grafana_. Дашборд настроен в  _GUI Grafana_. Мониторинг системы доступен по адресу: _http://192.168.56.10:3000_. 
   
 ![](https://github.com/Vitaliy7/Prometheus/blob/main/prometheus.png?raw=true)
 
