@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  
+  - name: Install EPEL from Repo
+    yum:
+      name: epel-release
+      state: present
+    
+  - name: Install Repo
+    shell: yum install -y yum-utils device-mapper-persistent-data lvm2
+  
+  - name: Add Repo
+    shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    
+  - name: Install Docker
+    yum:
+      name: 
+       - docker-ce
+       - docker-compose
+       - git
+      state: present
+    
+  - name: Start and enable Docker
+    systemd:
+      name: docker.service
+      state: started
+      enabled: yes
+    
+  - name: Start Git
+    shell: git clone https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana.git
+    
+  - name: Start Prometheus and Grafana
+    shell: cd Docker-Compose-Prometheus-and-Grafana && docker-compose up -d
